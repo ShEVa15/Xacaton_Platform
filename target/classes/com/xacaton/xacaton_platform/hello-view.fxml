@@ -12,7 +12,7 @@
             <font>
                 <Font size="18.0" />
             </font></Label>
-        <PasswordField layoutX="231.0" layoutY="214.0" />
+        <PasswordField fx:id="passField" layoutX="231.0" layoutY="214.0" />
         <Label layoutX="46.0" layoutY="98.0" prefHeight="36.0" prefWidth="495.0" text="Пожалуйста, введите логин учётной записи и пароль" textAlignment="CENTER" textOverrun="CLIP">
             <font>
                 <Font size="18.0" />
@@ -23,12 +23,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <PasswordField layoutX="231.0" layoutY="161.0" />
+        <PasswordField fx:id="loginField" layoutX="231.0" layoutY="161.0" />
         <Label layoutX="146.0" layoutY="161.0" text="Логин:">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-      <Button layoutX="333.0" layoutY="271.0" mnemonicParsing="false"  text="Войти" />
+      <Button fx:id="btnGo" layoutX="333.0" layoutY="271.0" mnemonicParsing="false" text="Войти" />
     </children>
 </AnchorPane>

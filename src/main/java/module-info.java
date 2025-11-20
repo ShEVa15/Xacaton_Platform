@@ -1,6 +1,7 @@
 module com.xacaton.xacaton_platform {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.xml;
 
 
     opens com.xacaton.xacaton_platform to javafx.fxml;
