@@ -7,8 +7,6 @@ package com.xacaton.xacaton_platform;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 
 public class Controller {
 
@@ -18,98 +16,9 @@ public class Controller {
     @FXML // URL location of the FXML file that was given to the FXMLLoader
     private URL location;
 
-    @FXML // fx:id="btnGo"
-    private Button btnGo; // Value injected by FXMLLoader
-
-    @FXML // fx:id="loginField"
-    private PasswordField loginField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="passField"
-    private PasswordField passField; // Value injected by FXMLLoader
-
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-        //Установка фокуса на поле логина
-        loginField.requestFocus(); // Не работает ?
-
-        setupEventHandlers();
-    }
-
-    private void setupEventHandlers(){
-        // Обработка кнопки войти
-        btnGo.setOnAction(event -> {
-            String pass = passField.getText();
-            String login = loginField.getText();
-//            System.out.println(login + " " + pass);\
-
-            switch (login) {
-                case "root":
-                    if (pass.equals("123")){
-                        //TODO    ВХОД
-                        System.out.println("Пользователь пытается войти");
-                    }
-                    else {
-                        //TODO НЕПРАВИЛЬНЫЙ ПАРОЛЬ
-                    }
-                    break;
-                case "user":
-                    //TODO    ВХОД
-                    System.out.println("Пользователь пытается войти");
-                    break;
-            }
-        });
-        //Обработка enter
-        loginField.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case ENTER:
-                    passField.requestFocus();
-                    break;
-                case ESCAPE:
-                    loginField.clear();
-                    break;
-            }
-        });
-        passField.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case ENTER:
-                    //TODO    ВХОД
-                    if (loginField.getText().equals("")){
-                        loginField.requestFocus();
-                        break;
-                    }
-                    System.out.println("Пользователь пытается войти");
-                    break;
-                case ESCAPE:
-                    passField.clear();
-                    break;
-            }
-        });
 
     }
 
 }
-
-
-
-/*
-// 1. Получение/установка текста
-passwordField.getText();                    // Получить пароль как String
-passwordField.setText("new password");      // Установить текст
-passwordField.clear();                      // Очистить поле
-
-// 2. Фокусировка и навигация
-passwordField.requestFocus();               // Установить фокус на поле
-passwordField.isFocused();                  // Проверить, есть ли фокус
-passwordField.selectAll();                  // Выделить весь текст
-passwordField.deselect();                   // Снять выделение
-
-// 3. Внешний вид и подсказки
-passwordField.setPromptText("Введите пароль");     // Текст-подсказка
-passwordField.setPrefColumnCount(20);              // Ширина в символах
-passwordField.setMaxWidth(300);                    // Максимальная ширина
-
-// 4. Состояние поля
-passwordField.setEditable(false);                  // Заблокировать редактирование
-passwordField.setDisable(true);                    // Отключить поле
-passwordField.isEditable();                        // Проверить, доступно ли редактирование
- */
